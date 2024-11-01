@@ -4,27 +4,28 @@ public class SearchNilai18 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        int banyakNilai = 0;
+        int jmlMhs = 0;
         System.out.print("Masukkan banyaknya nilai yang akan diinput: ");
-        banyakNilai = sc.nextInt();
+        jmlMhs = sc.nextInt();
+        
+        int[] nilaiMhs = new int[jmlMhs];
+        int key = 85, hasil = 0;
 
-        int[] arrNilai = new int[banyakNilai];
-        for (int i = 1; i < arrNilai.length; i++) {
-            System.out.print("Masukkan nilai mahasiswa ke-" + i+ " : ");
-            arrNilai[i] = sc.nextInt();
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke-" + (i+1) + " : ");
+            nilaiMhs[i] = sc.nextInt();
         }
-        int key, hasil = 0;
-        System.out.print("Masukkan nilai yang dicari: ");
-        key = sc.nextInt();
-
-        for (int i = 1; i < arrNilai.length; i++){
-            if (key == arrNilai[i]){
+            for (int i = 1; i < nilaiMhs.length; i++) {
+                System.out.println("Masukkan nilai yang ingin dicari: " + key);
+            if (key == nilaiMhs[i]) {
+                System.out.println();
+                System.out.println("Nilai " + key + " ketemu, merupakan nilai mahasiswa ke-" + hasil);
                 hasil = i;
+            } else {
+                System.out.println();
+                System.out.println("Nilai yang dicari tidak ditemukan");
                 break;
             }
         }
-         System.out.println();
-         System.out.println("Nilai " +key+ " ketemu, merupakan nilai mahasiswa ke-" +hasil);
-         System.out.println();
     }
 }
